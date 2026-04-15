@@ -31,6 +31,18 @@ models:
     max_tokens: 4096               # Max tokens per request
     temperature: 0.7               # Sampling temperature
 ```
+#### `stream_usage`
+
+For OpenAI-compatible models, `stream_usage` defaults to `true` when it is not explicitly configured.
+
+This is enabled by default so streaming responses can include usage metadata, which is needed by features that rely on token usage information.
+
+You can override this behavior in your config:
+
+```yaml
+stream_usage: false
+```
+Set `stream_usage: false` if you want to disable usage metadata in streaming responses.
 
 **Supported Providers**:
 - OpenAI (`langchain_openai:ChatOpenAI`)
